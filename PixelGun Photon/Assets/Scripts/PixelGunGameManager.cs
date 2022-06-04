@@ -6,12 +6,22 @@ using Photon.Realtime;
 
 public class PixelGunGameManager : MonoBehaviourPunCallbacks
 {
+    [SerializeField]
+    GameObject playerPrefab;
     // Start is called before the first frame update
     void Start()
     {
         if(PhotonNetwork.IsConnected)
         {
+            if(playerPrefab != null)
+            { 
+                int randomZ = Random.Range(-20,-28);
+                int randomX = Random.Range(0, 10);
 
+
+                PhotonNetwork.Instantiate(playerPrefab .name, new Vector3(randomX, 22, randomZ),Quaternion.identity);
+            
+            }
         }
     }
 

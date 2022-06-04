@@ -76,4 +76,12 @@ public class MovementController : MonoBehaviour
     {
         CameraUpDownRotation = cameraUpDownRotation;
     }
+
+    public void Respawn()
+    {
+        int randomZ = Random.Range(-20, -28);
+        int randomX = Random.Range(0, 10);
+
+        transform.position = new Vector3(randomX, 22, randomZ);
+    }
 }
